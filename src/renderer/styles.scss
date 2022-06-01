@@ -1,0 +1,462 @@
+// Variables
+@font-face {
+  font-family: 'Proxima Nova';
+  src:url('/assets/fonts/fs-webfonts-262900968/fonts/1132144/d9fe41ee-4904-4a11-ba11-b61cd3be767f.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Proxima Nova';
+  src:url('/assets/fonts/fs-webfonts-262900968/fonts/1132159/64017d81-9430-4cba-8219-8f5cc28b923e.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Proxima Nova';
+  src:url('/assets/fonts/fs-webfonts-262900968/fonts/1132171/ae47a7f5-89da-4879-b934-29722c3dd451.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+}
+
+$nova: 'Proxima Nova', 'Roboto', sans-serif;
+$montserrat: 'Montserrat', Helvetica, Arial, sans-serif;
+$basefont: 15px;
+$font16: 1.143em;
+$bold: 700; // Reset Styles
+
+$darkblack: #292e33;
+$softblack: #424b55;
+$darkgrey: #6a7888;
+$midgrey: #929fae;
+$softgrey: #d8dde3;
+$watergrey: #ecf0f5;
+$whitegrey: #f7f9fa;
+$primary: #774c96;
+$blue: #49a2cc;
+$green: #59c3a5;
+$red: #f45b69;
+$yellow: #f6b13f;
+$white: #fff;
+$primary: #3333CC;
+$secondary: #281462;
+$tertiary: #00FFB6;
+
+*,
+*:after,
+*:before {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+// Layout
+
+body {
+  font-family: $montserrat;
+  font-size: $basefont;
+  line-height: 1.4em;
+  color: $white;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizelegibility;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+// Componenents
+
+.btn-login {
+  padding: 15px 30px;
+  border-radius: 4px;
+  font-size: $font16;
+  font-weight: $bold;
+  color: white;
+  display: inline-block;
+  width: 100%;
+  border: none;
+  background: #3333cc;
+  cursor: pointer;
+  text-transform: uppercase;
+
+  &:focus {
+    outline: none;
+  }
+
+  &[disabled] {
+    opacity: .7;
+    cursor:not-allowed;
+  }
+}
+
+hr {
+  border: none;
+  border-top: 1px solid $softgrey;
+  width: 100px;
+  display: block;
+  margin: 30px auto;
+}
+
+.bluelink {
+  color: $tertiary;
+  font-weight: bold;
+}
+
+.field {
+  margin-bottom: 15px;
+}
+
+[type="email"],
+[type="password"],
+[type="text"],
+[type='checkbox'],
+[type='radio'],
+select {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  padding: 15px;
+  border: 1px solid $softgrey;
+  box-shadow: none;
+  background-color: white;
+  font-family: $montserrat;
+  color: $softblack;
+  font-size: $font16;
+  border-radius: 3px;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+[type='checkbox'],
+[type='radio'] {
+  position: relative;
+  width: 16px;
+  height: 16px;
+  margin-right: 5px;
+  padding: 0;
+  vertical-align: top;
+  cursor: pointer;
+
+  &:hover {
+    border: 1px solid $primary;
+  }
+}
+
+[type='checkbox'] {
+
+  &:checked {
+
+    &::before {
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      background-color: $primary;
+      width: 10px;
+      height: 10px;
+      text-align: center;
+      border-radius: 2px;
+      content: '';
+    }
+  }
+}
+
+[type='radio'] {
+  border-radius: 50%;
+
+  &:checked {
+    border: 4px solid white;
+    background-color: $primary;
+    box-shadow: 0 0 0 1px $softgrey;
+  }
+}
+
+
+.select {
+  position: relative;
+  display: inline-block;
+  vertical-align: bottom;
+  display: block;
+  width: 100%;
+
+  &:before {
+    content: "";
+    background: url('assets/images/chevron-down.svg') no-repeat;
+    width: 10px;
+    height: 6px;
+    background-size: cover;
+    position: absolute;
+    pointer-events: none;
+    top: 12px;
+    right: 5px;
+  }
+}
+
+select {
+  -webkit-appearance: none;
+  appearance: none;
+  padding-right: 20px;
+  border: none;
+  padding: 5px 15px;
+}
+
+.change-language {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 150px;
+  font-size: 14px;
+}
+// Login
+
+.login-wrapper {
+  display: table;
+  height: 100vh;
+  display: table;
+  height: 100vh;
+  width: 100%;
+  max-width: 330px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.login {
+  display: table-cell;
+  vertical-align: middle;
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 30px;
+
+  .logo {
+    width: 100px;
+    margin-bottom: 20px;
+  }
+
+  h1 {
+    font-size: 25px !important;
+    font-weight: 600 !important;
+    line-height: 1;
+    margin-top: 20px;
+    margin-bottom: 30px;
+  }
+
+  .field {
+    position: relative;
+    margin-bottom: 20px;
+
+    label {
+      display: none;
+    }
+  }
+
+  .warning {
+    padding: 10px;
+    border: 1px solid $softgrey;
+    border-top: 2px solid $red;
+  }
+}
+
+// Options
+.options-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  flex-flow: column nowrap;
+  height: 100%;
+  width: 100%;
+  background: white;
+  border: 3px solid $watergrey;
+
+  legend {
+    font-size: 32px;
+    font-weight: 300;
+    margin-bottom: 40px;
+  }
+
+  label {
+    cursor: pointer;
+  }
+
+  input {
+    position: relative;
+    top: 2px;
+  }
+
+  .btn {
+    margin-top: 20px;
+    padding: 12px 20px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: $bold;
+    color: white;
+    display: inline-block;
+    width: 100%;
+    border: none;
+    background: $green;
+    cursor: pointer;
+    text-transform: uppercase;
+
+    &:focus {
+      outline: none;
+    }
+
+    &[disabled] {
+      opacity: .7;
+      cursor:not-allowed;
+    }
+  }
+}
+
+
+// =====================
+// = Password Strength =
+// =====================
+.password-strength {
+  position: relative;
+  width: 100%;
+  height: 5px;
+  margin-top: 5px;
+  background-color: #d8dde3;
+  margin-bottom: 25px;
+
+  &::before,
+  &::after {
+    position: absolute;
+    top: 0;
+    width: 1px;
+    height: 5px;
+    background-color: #fff;
+    content: '';
+  }
+
+  &::before {
+    left: 33.3%;
+  }
+
+  &::after {
+    left: 66.6%;
+  }
+
+  &__text {
+    display: block;
+    position: absolute;
+    right: 0;
+    padding-top: 7px;
+    font-size: 12px;
+    font-weight: 500;
+    padding:3px;
+  }
+
+  &--weak {
+    width: 33.3%;
+    height: 5px;
+    background-color:#f45b69;
+
+    .password-strength__text {
+      color: #f45b69;
+    }
+  }
+
+  &--medium {
+    width: 66.6%;
+    height: 5px;
+    background-color: #f6b13f;
+
+    .password-strength__text {
+      color: #f6b13f;
+    }
+  }
+
+  &--strong {
+    width: 100%;
+    height: 5px;
+    background-color: #59c3a5;
+
+    .password-strength__text {
+      color: #59c3a5;
+    }
+  }
+}
+
+.info-password {
+  position: absolute;
+  top: 16px;
+  right: -35px;
+}
+
+
+
+
+// ngTooltip: https://github.com/drozhzhin-n-e/ng2-tooltip-directive/blob/master/example/src/styles.css
+
+.ng-tooltip {
+    max-width: 200px;
+    background-color: $darkblack;
+    color: #fff;
+    font-size: 14px;
+    line-height: 150%;
+    text-align: center;
+    border-radius: 4px;
+    padding: 10px;
+    position: absolute;
+    z-index: 1000;
+    display: block;
+    opacity: 0;
+    -webkit-transition: opacity 300ms;
+    -moz-transition: opacity 300ms;
+    -o-transition: opacity 300ms;
+    transition: opacity 300ms;
+}
+
+.ng-tooltip-show {
+    opacity: 1;
+}
+
+.ng-tooltip::after {
+    content: "";
+    position: absolute;
+    border-style: solid;
+}
+
+.ng-tooltip-top::after {
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-color: $darkblack transparent transparent transparent;
+}
+
+.ng-tooltip-bottom::after {
+    bottom: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-color: transparent transparent $darkblack transparent;
+}
+
+.ng-tooltip-left::after {
+    top: 50%;
+    left: 100%;
+    margin-top: -5px;
+    border-width: 5px;
+    border-color: transparent transparent transparent $darkblack;
+}
+
+.ng-tooltip-right::after {
+    top: 50%;
+    right: 100%;
+    margin-top: -5px;
+    border-width: 5px;
+    border-color: transparent $darkblack transparent transparent;
+}
+
+.identity-background-section-01 {
+  background: url("../main/assets/noysi-identity-bg.png") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 120vh !important;
+}

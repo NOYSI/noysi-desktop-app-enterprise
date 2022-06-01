@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es5",
+    "outDir": "./dist",
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "removeComments": false,
+    "noImplicitAny": false,
+    "suppressImplicitAnyIndexErrors": true,
+    "types": [
+      "node",
+      "core-js"
+    ]
+  },
+  "exclude": [
+    "config",
+    "dist",
+    "node_modules",
+    "src/node_modules"
+  ],
+  "compileOnSave": false,
+  "buildOnSave": false
+}

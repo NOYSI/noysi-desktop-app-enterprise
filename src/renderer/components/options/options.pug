@@ -1,0 +1,10 @@
+form.options-wrapper((ngSubmit)="onSubmit()", novalidate)
+  legend {{'options.options' | translate}}
+  .field( *ngIf="platform !== 'darwin'")
+    input(type="checkbox", [checked]="options.minimizeOnClose", (change)="options.minimizeOnClose = !options.minimizeOnClose", name="minimizeOnClose", id="minimizeOnClose")
+    label(for="minimizeOnClose") {{'options.minimizeOnClose' | translate}}
+  .field
+    input(type="checkbox",  [checked]="options.startOnLogin", (change)="options.startOnLogin = !options.startOnLogin", name="startOnLogin", id="startOnLogin" )
+    label(for="startOnLogin") {{'options.startOnLogin' | translate}}
+  .field
+    button.btn(type="submit") {{'options.save' | translate}}

@@ -1,0 +1,9 @@
+{
+  "name": "noysi-desktop",
+  "productName": "Noysi",
+  "version": "1.1.6",
+  "description": "Noysi for desktop",
+  "main": "main.bundle.js",
+  "author": "",
+  "license": "ISC"
+}
